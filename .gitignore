@@ -1,0 +1,11 @@
+venv/
+old/
+test_output/
+*.dSYM/
+*.exe
+*.out
+.*
+!.gitignore
+mem_functions.c
+mem_functions_template.c
+mem.h
