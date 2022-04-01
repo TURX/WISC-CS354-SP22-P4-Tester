@@ -8,7 +8,7 @@ int main() {
     Initialize_Memory_Allocator(114514);
     Mem_Dump();
 
-    char *p[463];
+    char *p[512] = { 0x0 };
     for (int i = 1; i < 463; i++) {
         if ((p[i] = Mem_Alloc(i)) == NULL) {
             printf("Allocation failed\n");
@@ -22,10 +22,28 @@ int main() {
     }
     Mem_Dump();
 
+    for (int i = 463; i < 512; i++) {
+        if ((p[i] = Mem_Alloc(i)) != NULL) {
+            printf("Allocation success unexpectedly\n");
+            exit(0);
+        }
+        Mem_Dump();
+    }
+    Mem_Dump();
+
 
     for (int i = 462; i >= 1; i--) {
         if (Mem_Free(p[i]) == -1) {
             printf("Free failed\n");
+            exit(0);
+        }
+        Mem_Dump();
+    }
+    Mem_Dump();
+
+    for (int i = 512; i > 462; i--) {
+        if (Mem_Free(p[i]) != -1) {
+            printf("Free success unexpectedly\n");
             exit(0);
         }
         Mem_Dump();
