@@ -9,3 +9,6 @@ test_output/
 mem_functions.c
 mem_functions_template.c
 mem.h
+driver_alloc_custom.c
+in.txt
+out.txt
