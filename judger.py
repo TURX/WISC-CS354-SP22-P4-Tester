@@ -18,6 +18,7 @@ if __name__ == '__main__':
         expected_output_line = expected_output[line_num]
         actual_output_line = actual_output[line_num]
         if len(expected_output_line) != len(actual_output_line):
+            print("Line " + str(line_num) + ": Length mismatch")
             print("Output length mismatch")
             exit(1)
         if len(expected_output_line) == 91 and expected_output_line[0] == '>' and actual_output_line[0] == '>':
