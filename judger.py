@@ -18,7 +18,7 @@ if __name__ == '__main__':
         expected_output_line = expected_output[line_num]
         actual_output_line = actual_output[line_num]
         if len(expected_output_line) != len(actual_output_line):
-            print("Output length mismatch")
+            print("Output length mismatch at line " + str(line_num + 1))
             exit(1)
         if len(expected_output_line) == 91 and expected_output_line[0] == '>' and actual_output_line[0] == '>':
             expected_output_line_with_pointer = re.sub(r' +', ' ', expected_output_line)
